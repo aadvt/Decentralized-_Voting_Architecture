@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Voting Page</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    
+  </head>
+  <body>
+    <div id="head" class="text-center">
+      <h1 align="center">Decentralized Voting Using Ethereum Blockchain</h1>
+      <h2 align="center">Welcome for Voting</h2> 
+      <h3 align="center"><p>Voting Dates: <span id="dates"></span></p></h3>
+      <div id="modeSwitch" style="text-align:center; margin: 14px 0 10px;">
+        <a class="btn" href="?mode=sim" style="text-decoration:none;">Simulation Mode</a>
+        <a class="btn" href="?mode=chain" style="text-decoration:none; margin-left: 10px;">Blockchain Mode</a>
+      </div>
+      <div style="text-align:center; margin: 12px 0;">
+        <button class="btn btn-primary" onclick="App.connect()">Connect Wallet</button>
+      </div>
+      <br/> 
+    </div>
+    <div id="candidate" class="container"> 
+      <div id="simControls" class="panel" style="margin-bottom: 18px;">
+        <h3 style="margin: 0 0 10px;">Simulation (no storage)</h3>
+        <p style="margin: 0 0 14px; color: var(--muted);">
+          Add candidates and vote locally in this browser session. Nothing is written on-chain or saved to a database.
+        </p>
+        <div class="formRow">
+          <div class="field">
+            <label for="simName">Candidate name</label>
+            <input id="simName" type="text" placeholder="e.g. Krish" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="simParty">Party</label>
+            <input id="simParty" type="text" placeholder="e.g. Independent" autocomplete="off" />
+          </div>
+          <div class="field fieldButton">
+            <label style="opacity: 0;">Add</label>
+            <button id="simAddCandidate" class="btn btn-primary" type="button">Add candidate</button>
+          </div>
+        </div>
+        <div id="simHint" class="hint"></div>
+      </div>
+      <table class="table text-center">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Party</th>
+            <th>Total Vote</th>
+          </tr>
+        </thead>
+        <tbody id="boxCandidate"></tbody>
+      </table>
+      <br/>
+      <div id="vote">
+        <p>Please select one of the candidates and click the vote button.</p>
+        <button id="voteButton" class="btn btn-primary" onclick="App.vote()" disabled>Vote</button>
+        <div id="msg"></div>
+  
+        <div id="vote-box"></div>
+      </div>
+    </div>
+  
+    <div id="account">
+          <p id="accountAddress" class="text-center"></p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="../dist/app.bundle.js"></script>
+  </body>
+</html>

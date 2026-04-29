@@ -1,0 +1,28 @@
+{
+  "name": "decentralized-voting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "truffle compile",
+    "build": "browserify ./src/js/app.js -o ./src/dist/app.bundle.js",
+    "chain": "ganache --port 7545 --chain.chainId 1337 --chain.networkId 1337 --wallet.mnemonic \"candy maple cake sugar pudding cream honey rich smooth crumble sweet treat\"",
+    "migrate": "truffle migrate --reset",
+    "dev": "node ./scripts/dev.js",
+    "start": "npm run build && node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@truffle/contract": "^4.6.18",
+    "browserify": "^17.0.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "web3": "^1.9.0"
+  },
+  "devDependencies": {
+    "ganache": "^7.9.2",
+    "truffle": "^5.11.5"
+  }
+}

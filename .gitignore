@@ -1,0 +1,8 @@
+node_modules/
+
+# Environment / secrets
+.env
+Database_API/.env
+
+# Logs
+*.log

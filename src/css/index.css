@@ -1,0 +1,272 @@
+:root {
+  --bg: #f4f4f2;
+  --card: #ffffff;
+  --fg: #0b0b0b;
+  --muted: #6b6b6b;
+  --border: rgba(0, 0, 0, 0.12);
+  --shadow: 0 18px 60px rgba(0, 0, 0, 0.08);
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 48px 20px 72px;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("../assets/eth5.jpg") center / cover no-repeat;
+  opacity: 0.06;
+  filter: saturate(0.8) contrast(1.05);
+  pointer-events: none;
+}
+
+#head {
+  width: min(1100px, 100%);
+  margin: 0 auto 22px;
+  text-align: center;
+  position: relative;
+}
+
+#head h1 {
+  margin: 0 0 8px;
+  font-size: clamp(28px, 4vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+#head h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 560;
+  color: var(--muted);
+}
+
+#head h3 {
+  margin: 10px 0 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.container {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 26px 26px 22px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.panel {
+  padding: 16px 16px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+
+.field input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--fg);
+  outline: none;
+}
+
+.field input:focus {
+  border-color: rgba(0, 0, 0, 0.35);
+}
+
+.fieldButton {
+  min-width: 170px;
+}
+
+.hint {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent;
+}
+
+.table thead th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 14px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.table tbody td {
+  padding: 14px 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  vertical-align: middle;
+}
+
+#vote {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+#vote p {
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+
+#msg {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+#vote-box {
+  margin-top: 14px;
+}
+
+input[type="radio"] {
+  transform: translateY(1px);
+}
+
+input[type="submit"],
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 0.12s ease, background-color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+}
+
+.btn.btn-primary {
+  border-color: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.btn:hover,
+input[type="submit"]:hover,
+#voteButton:hover {
+  background: #000;
+  border-color: #000;
+}
+
+.btn:active,
+input[type="submit"]:active,
+#voteButton:active {
+  transform: translateY(1px);
+}
+
+.btn:disabled,
+#voteButton:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+#voteButton {
+  min-width: 160px;
+}
+
+#account {
+  width: min(1100px, 100%);
+  margin: 14px auto 0;
+  text-align: center;
+}
+
+#accountAddress {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+  word-break: break-all;
+}
+
+@media (max-width: 720px) {
+  body {
+    padding: 28px 14px 48px;
+  }
+
+  .container {
+    padding: 18px;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .fieldButton {
+    min-width: auto;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table tr {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
+    padding: 8px 10px;
+    margin-bottom: 12px;
+  }
+
+  .table tbody td {
+    border: none;
+    padding: 10px 0;
+  }
+}
+  
